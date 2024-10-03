@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The E-Tailer</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        #header ul {
+            list-style: none;
+            padding: 0;
+        }
+        #header ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        #header ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .pro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .pro {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .pro img {
+            max-width: 100%;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .pro .des {
+            margin-bottom: 10px;
+        }
+        .pro .cart {
+            cursor: pointer;
+            color: #333;
+        }
+        #cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 300px;
+            display: none;
+        }
+        #cart h2 {
+            margin: 0 0 10px;
+        }
+        #cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        #cart ul li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        #cart ul li button {
+            background: aquamarine;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #cart .total {
+            font-weight: bold;
+        }
+        #cart .pay {
+            background: skyblue;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #newsfeed{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            background-image: url("Images/footer.jpg");
+            background-repeat: no-repeat;
+            background-position: 20% 30%;
+            background-color: #041e42;
+        }
+        
+        #newsfeed h4{
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        #newsfeed p{
+            font-size: 14px;
+            font-weight: 600;
+            color: #818ea0;
+        }
+        
+        #newsfeed p span{
+            color: #ffbd27;
+        }
+        
+        #newsfeed .form{
+            display: flex;
+            width: 40%;
+        }
+        
+        #newsfeed input{
+            height: 3.125rem;
+            padding: 0 1.25em;
+            font-size: 14px;
+            width: 100%;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        #newsfeed button{
+            background-color: #088178;
+            color: #fff;
+            white-space: nowrap;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        footer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        footer .col{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        footer .logo{
+            margin-bottom: 30px;
+        }
+        
+        footer h4{
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+        
+        footer p{
+            font-size: 13px;
+            margin: 0 0 8px 0;
+        }
+        
+        footer a{
+            font: 13px;
+            text-decoration: none;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        footer .follow{
+            margin-top: 20px;
+        }
+        
+        footer .follow i{
+            color: #465b52;
+            padding-right: 4px;
+            cursor: pointer;
+        }
+        
+        footer .install .row img{
+            border: 1px solid #088178;
+            border-radius: 6px;
+        }
+        
+        footer .install img{
+            margin: 10px 0 15px 0;
+        }
+        
+        footer .follow i:hover,
+        footer a:hover{
+            color: #088178;
+        }        
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="img/logo.jpg" class="logo" width="100"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+               <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="cart-icon"><i class="far fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section><section id="page-header">
+        <h2>#BeStylish</h2>
+        <p>Save more with coupons & upto 50% off</p>
+    </section>
+
+    <section class="pro-container">
+        <div class="pro">
+            <img src="img/airforce.jpeg" alt="Air Force1 white">
+            <div class="des">
+                <span>Shoes</span>
+                <h5>Air Force1 white</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>Ksh.2,000</h4>
+            </div>
+            <i class="fal fa-shopping-cart cart" data-name="Air Force1 white" data-price="2000"></i>
+        </div>
+        <div class="pro">
+            <img src="img/jordan4.jpeg" alt="Jordan 4">
+                <div class="des">
+                  <span>Shoes</span>
+                  <h5>Jordan 4</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.3,500</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Jordan 4" data-price="3500"></i>
+        </div>
+        <div class="pro">
+            <img src="img/jordan 1 low.jpeg" alt="Jordan 1 Low">
+                <div class="des">
+                  <span>Shoes</span>
+                  <h5>Jordan 1 Low</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.3,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Jordan 1 Low" data-price="3000"></i>
+        </div>
+        <div class="pro">
+            <img src="img/nike sb dunk.jpeg" alt="Nike SB Dunk">
+                <div class="des">
+                  <span>Shoes</span>
+                  <h5>Nike SB Dunk</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.4,200</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Nike SB Dunk" data-price="4200"></i>
+        </div>
+        <div class="pro">
+            <img src="img/louis vuitton heels.jpeg" alt="Louis Vuitton Heels">
+                <div class="des">
+                  <span>Shoes</span>
+                  <h5>Louis Vuitton Heels</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.5,000</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Louis Vuitton Heels" data-price="5000"></i>
+        </div>
+        <div class="pro">
+            <img src="img/prod 1.jpg" alt=" Men's Short Sleeve Shorts Casual Set-White">
+                <div class="des">
+                  <span>Clothes</span>
+                  <h5> Men's Short Sleeve Shorts Casual Set-White</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.830</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name=" Men's Short Sleeve Shorts Casual Set-White" data-price="830"></i>
+        </div>
+        <div class="pro">
+            <img src="img/prod 2.jpg" alt="Shorts Loose Sport Short For Men And Women">
+                <div class="des">
+                  <span>Clothes</span>
+                  <h5>Shorts Loose Sport Short For Men And Women</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.256</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Shorts Loose Sport Short For Men And Women" data-price="256"></i>
+        </div>
+        <div class="pro">
+            <img src="img/prod 3.jpg" alt="">
+                <div class="des">
+                  <span>Clothes</span>
+                  <h5>Men's Fashion Shorts Casual Sports Five-point Pants</h5>
+                  <div class="star">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i> 
+                  </div>
+                    <h4>Ksh.1,199</h4>
+                </div>
+            <i class="fal fa-shopping-cart cart" data-name="Men's Fashion Shorts Casual Sports Five-point Pants" data-price="1199"></i>
+        </div>
+        
+        <!-- Add more products similarly -->
+    </section>
+
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <div class="total">Total: Ksh. <span id="total-price">0</span></div>
+        <button class="pay"><a href="Payment.html">Pay</a></button>
+    </div>
+
+    <section id="newsfeed" class="section-p1 section-m1">
+        <div class="newstext">
+           <h4>Sign Up For Exclusive Updates</h4>
+           <p>Get E-mail updates about our latest arrivals and <span>special offers</span></p>
+        </div>
+        <div class="form">
+             <input type="text" placeholder="Please Enter Your email address">
+             <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" alt="" width="100">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Kiambu Road,Around Kiambu,Kiambu County</p>
+            <p><stong>Phone:</stong>+254 701412711</p>
+            <p><strong>Hours:</strong>0800 - 1800,Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="copyright">
+                    <p>© 2024,Tech 2 - E-Tailer Template</p>
+                    </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Private Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contat Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/app 1.png" alt="" width="100" height="60">
+                <img src="img/app 2.jpg" alt="" width="100">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/payment.png" alt="" width="150">
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                if (confirm('Do You Want To Add This Product To Your Cart?')) {
+                    alert('Product successfully added to cart');
+                    addToCart(name, price);
+                }
+            });
+        });
+
+        function addToCart(name, price) {
+            const cartItems = document.getElementById('cart-items');
+            const item = document.createElement('li');
+            item.innerHTML = `${name} - Ksh. ${price} <button onclick="removeFromCart(this, ${price})">Remove</button>`;
+            cartItems.appendChild(item);
+            updateTotal(price);
+        }
+
+        function removeFromCart(button, price) {
+            const item = button.parentElement;
+            item.remove();
+            updateTotal(-price);
+        }
+
+        function updateTotal(price) {
+            const totalPrice = document.getElementById('total-price');
+            totalPrice.textContent = parseInt(totalPrice.textContent) + price;
+        }
+
+        document.getElementById('cart-icon').addEventListener('click', () => {
+            const cart = document.getElementById('cart');
+            cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
